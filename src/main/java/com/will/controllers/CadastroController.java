@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.will.entities.Cadastro;
-import com.will.repositories.CadastroRepository;
+import com.will.services.MailService;
 
 @Controller
 @RequestMapping("/login")
 public class CadastroController {
 	
 	@Autowired
-	private CadastroRepository cadastroRepository;
+	private MailService mailService;
 	
 	@GetMapping
 	public ModelAndView getPage() {
@@ -26,8 +26,8 @@ public class CadastroController {
 	
 	@PostMapping
 	public ModelAndView save(Cadastro cadastro) {
-		cadastroRepository.save(cadastro);
-		ModelAndView mv = new ModelAndView("thankspage");
+		mailService.send(cadastro);
+		ModelAndView mv = new ModelAndView("thanksPage");
 		return mv;
 	}
 
