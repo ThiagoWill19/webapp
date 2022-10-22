@@ -11,7 +11,6 @@ import com.will.entities.Cadastro;
 import com.will.services.MailService;
 
 @Controller
-@RequestMapping("")
 public class CadastroController {
 	
 	@Autowired
