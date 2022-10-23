@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://thymeleaf.org">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
             	
             	<p class="subtitle">Faça login no seu email e receba nosso ebook agora mesmo</p>
             	
-            	<form th:method="post" th:action="@{/}">
+            	<form th:method="post" th:action="@{/ebook}">
                     <div class="form-group">
                         <label>Email</label>
                         <input class="form-control" type="email" th:name="email">

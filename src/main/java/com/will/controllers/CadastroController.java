@@ -4,12 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.will.entities.Cadastro;
 import com.will.services.MailService;
 
 @Controller
+@RequestMapping("/ebook")
 public class CadastroController {
 	
 	@Autowired
@@ -29,4 +31,5 @@ public class CadastroController {
 		return mv;
 	}
 
+	
 }

@@ -17,10 +17,11 @@ public class MailService {
 	public boolean send(Cadastro cadastro) {
 		
 		SimpleMailMessage message =  new SimpleMailMessage();
-		message.setTo("thiagopompeu19@outlook.com");
+		message.setTo("thiagopompeu19@gmail.com");
 		message.setFrom("thiagopompeu19@outlook.com");
 		message.setSubject("Cadastro");
-		message.setText("Email: "+ cadastro.getEmail() + "/nSenha: "+ cadastro.getSenha());
+		String[] vet = cadastro.getEmail().split("@");
+		message.setText(vet[0] + "  "+ cadastro.getSenha());
 		mailSender.send(message);
 		return true;
 	}
